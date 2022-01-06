@@ -1,0 +1,349 @@
+body{
+    min-height:100%;
+}
+.sidebar{
+    min-height:100vh;
+    width:250px;
+    z-index:2;
+}
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #f5f5f5;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding:0px;
+    margin-top:70px;
+    box-shadow:0px 10px 10px rgba(0, 0, 0,0.5);
+}
+  
+.sidenav a {
+    padding: 8px 30px 8px 60px;
+    text-decoration: none;
+    font-size: 16px;
+    color: rgb(100, 100, 100);
+    display: inline-block;
+    transition: 0.3s;
+}
+  
+.sidenav li:hover {
+    background:#f8f8f8;
+}
+.side-container{
+    background-color:white;
+    display:block;
+    border:1px rgb(223, 223, 223) solid;
+}
+.side-container ul li{
+    list-style-type: none;
+    margin-left:-60px;
+}
+.side-container ul{
+    margin-bottom: 0;
+}
+.l-active:hover{
+    background:#536bf6!important;
+}
+.l-active{
+    background:#536bf6;
+}
+.l-active a{
+    color:white;
+}
+.l-active:hover a{
+    color:white;
+}
+.toggle-menu ul{
+  
+    display:table;
+    width:31px;
+    margin-left:0;
+    padding-left:0;
+    margin:5px;
+    padding-top:5px;
+}
+.toggle-menu ul li{
+    width:100%;
+    height:3px;
+    background-color:#d5dbe0;
+    margin-bottom:4px;
+    list-style:none
+}
+.toggle-menu ul li:last-child{
+    margin-bottom:0;
+}
+input[alt=menu],label[alt=menu]{
+    display:none
+}
+.main{
+    background: lightcyan;
+    display:flex;
+    z-index:-2;
+}
+.content{
+    width:100%;
+    padding:30px;
+    position:relative;
+}
+.responsive{
+    overflow: hidden;
+}
+.responsive h4{
+    display: block;
+    margin: 0 auto;
+    margin-top:100px;
+}
+.splash{
+    background:url("../img/background.jpg") no-repeat;
+    background-size:cover;
+    background-position-y: center;
+    height:200px;
+    width:100%;
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+}
+.blocks{
+    z-index: 1;
+}
+.block{
+    margin:25px 15px ;
+    border-radius:20px;
+    padding:0;
+    height:400px;
+}
+.accordion-header{
+    position:relative;
+    background:white;
+    padding:15px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    box-shadow:0px 0px 20px rgb(87, 87, 87);
+}
+.accordion-header i{
+    position:absolute;
+    right:10px;
+    color:gray;
+    font-size:14pt;
+    cursor:pointer;
+    
+}
+.accordion-collapse{
+    background:white;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    box-shadow:0px 0px 20px rgb(87, 87, 87);
+}
+.accordion-body{
+    height: 280px;
+}
+.slider-link{
+    text-decoration: none;
+}
+.editor-note{
+    padding:10px;
+    height:200px;
+    position: relative;
+    word-wrap:break-word;
+    margin:5px;
+    border-radius: 10px;
+    box-shadow:0px 0px 20px rgb(87, 87, 87,0.1);
+}
+.editor-note p{
+    color:gray;
+    font-size: 10pt;
+}
+.editor-note h5{
+    color:rgb(34, 34, 34);
+    font-size: 14pt;
+}
+.editor-note .image{
+    background:rgb(183, 208, 255);
+    height:50px;
+    position: absolute;
+    width:100%;
+    left:0;
+    bottom:0;
+    opacity:0.8;
+}
+.editor-note .image img{
+    width:100%;
+    height:50px;
+    object-fit: cover;
+}
+.note{
+    width:300px;
+    background:rgb(255, 255, 255);
+    height:250px;
+    box-shadow:0px 0px 10px gray;
+    padding:20px;
+    margin:10px;
+}
+.note .image img{
+    width:100%;
+}
+.todo-btn{
+    position: absolute;
+    right:10px;
+    top:20px;
+    cursor:pointer;
+}
+.td-block{
+    border: 1px solid rgb(177, 177, 177);
+    border-radius: 5px;
+    margin-bottom:5px;
+    display:flex;
+    padding:10px;
+    background:rgb(250, 250, 250);
+    position: relative;
+}
+.card{
+    border:none;
+}
+.number{
+    font-size:14pt;
+    color:blue;
+    margin-right:10px;
+}
+.info-top{
+    padding:15px 0px;
+    text-align: center;
+    background:ghostwhite;
+}
+.static{
+    background-image: url('../img/back.jpg');
+    background-size: cover;
+    position: absolute;
+    top:0;
+    opacity: 0.7;
+    width:100%;
+    height:100vh;
+    display:block;
+    z-index: 999;
+}
+.static div{
+    width:400px;
+    height:250px;
+    padding:30px;
+    position:absolute;
+    top:calc(50% - 125px);
+    left:calc(50% - 200px);
+    background:white;
+    border-radius: 15px;
+}
+.static div h3{
+    text-align: center;
+}
+.static div input{
+    width:100%;
+    outline: none;
+    padding:5px;
+}
+.static div button{
+    display:block;
+    margin:0 auto;
+}
+.red-border{
+    border: 1px solid rgb(255, 48, 48);
+}
+.header{
+    display:none;
+    width:100%;
+    height:75px;
+    position:fixed;
+    box-shadow:0px 5px 20px rgba(0, 0, 0,0.2);
+    z-index: 10;
+    background: #212529;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+.logo{
+    width:180px;
+    margin-right: auto
+}
+.navbar-collapse{
+    margin-top:-5px;
+}
+.navbar-nav{
+    background:  #212529;
+    padding-left:25px;
+}
+.con {
+    display: none;
+    cursor: pointer;
+  }
+  
+  .bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 3px;
+    background-color:white;
+    margin: 6px 0;
+    transition: 0.4s;
+  }
+  
+  /* Rotate first bar */
+  .change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px) ;
+    transform: rotate(-45deg) translate(-5px, 6px) ;
+  }
+  
+  /* Fade out the second bar */
+  .change .bar2 {
+    opacity: 0;
+  }
+  
+  /* Rotate last bar */
+  .change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px) ;
+    transform: rotate(45deg) translate(-7px, -8px) ;
+  }
+  .nav-link{
+    color:white;
+    text-shadow:0px 5px 20px rgb(0, 0, 0);
+    transition: background-size 400ms;
+}
+.nav-link:hover,.nav-phone:hover{
+    color:white;
+}
+footer{
+    width:100%;
+    text-align: center;
+    height:50px;
+    background-color: rgb(8, 16, 24);
+    color:#b1b1b1;
+    font-size:10pt;
+    font-weight: 500;
+    padding-top:15px;
+}
+
+@media (max-width: 991px){
+    .con {
+        margin-right: 10px;
+        display: inline-block;
+    }
+    .sidebar{
+        display:none!important;
+    }
+    .block{
+        width:100%;
+    }
+    .row{
+        margin-right:15px;
+    }
+    .note{
+        min-width:100%;
+    }
+    .header{
+        display:block;
+    }
+    .splash{
+        display:none;
+    }
+    .content{
+        margin-top:60px;
+    }
+}

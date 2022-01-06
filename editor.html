@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WonderNote | Editor</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/editor.css">
+    <link rel="stylesheet" href="vendor/calendar/style.css">
+    <link rel="stylesheet" href="vendor/calendar/theme.css">
+    <link rel="stylesheet" href="vendor/owncarousel/owl.carousel.css">
+    <link rel="stylesheet" href="vendor/owncarousel/owl.theme.default.css">
+    <script src="https://kit.fontawesome.com/b2700bfb4b.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  </head>
+<body>
+    <main>
+      <div class="header">
+        <nav class="navbar navbar-expand-lg">
+            <a href="index.html" style="margin-top:-8px; color:white;text-decoration: none;font-weight: bold;font-size:16pt;"><img class="logo mr-md-auto" src="img/logo.png"></a>
+            <div class="con" onclick="toggle(this)" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation" >
+              <div class="bar1"></div>
+              <div class="bar2"></div>
+              <div class="bar3"></div>
+            </div>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+              <div class="navbar-nav">
+                <a class="nav-item nav-link" href="new.html">New Note</a>
+                <a class="nav-item nav-link" href="editor.html">Dashboard</a>
+                <a class="nav-item nav-link" href="notes.html">My Notes</a>
+                <a class="nav-item nav-link" href="todo.html">ToDo List</a>
+              </div>
+            </div>
+          </nav>
+    </div>
+    <div class="main">
+      <nav class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark sidebar">
+        <a href="index.html">
+          
+          <img src="img/logo.png" width="200px">
+        </a>
+        <hr>
+        <ul class="nav nav-pills flex-column mb-auto">
+          <li class="nav-item">
+            <a href="new.html" class="nav-link active" aria-current="page">
+              <i class="fas fa-plus"></i>
+              New Note
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="editor.html" class="nav-link text-white" aria-current="page">
+              <i class="fas fa-home"></i>
+              Dashboard
+            </a>
+          </li>
+          <li>
+            <a href="notes.html" class="nav-link text-white">
+              <i class="fas fa-file-alt"></i>
+              My Notes
+            </a>
+          </li>
+          <li>
+            <a href="todo.html" class="nav-link text-white">
+              <i class="fas fa-clipboard-list"></i>
+              ToDo List
+            </a>
+          </li>
+        </ul>
+        <hr>
+    </nav>
+    <div class="splash"></div>
+    <section class="content">
+      <h2 class="text-light">Hello, <span id="userName"></span></h2>
+      <div class="row blocks">
+          <div class="col-6 col-lg block" id="notes">
+              <div class="accordion-header d-flex align-items-center">
+                <h5>ALL NOTES</h5>
+                <i class="fas fa-ellipsis-h float-right" data-bs-toggle="collapse" data-bs-target="#collapseNotes"></i>
+              </div>
+              <div id="collapseNotes" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#notes">
+                <div class="accordion-body">
+                  <div class="d-flex flex-wrap responsive owl-carousel" id="noteList">
+                  </div>
+                </div>
+              </div>
+          </div>
+        <div class="col-lg block" id="calendar">
+          <div class="accordion-header d-flex align-items-center">
+            <h5>CALENDAR</h5>
+            <i class="fas fa-ellipsis-h float-right" data-bs-toggle="collapse" data-bs-target="#collapseCalendar"></i>
+          </div>
+          <div id="collapseCalendar" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#calendar">
+            <div class="accordion-body">
+              <div class="calendar-wrapper" id="calendar-wrapper"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row blocks" style="margin-top:-50px">
+        <div class="col-6 col-lg block" id="todo">
+            <div class="accordion-header d-flex align-items-center">
+              <h5>TODO LIST</h5>
+              <i class="fas fa-ellipsis-h float-right" data-bs-toggle="collapse" data-bs-target="#collapseTodo"></i>
+            </div>
+            <div id="collapseTodo" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#todo">
+              <div class="accordion-body" id="todoList">
+              </div>
+            </div>
+        </div>
+      <div class="col-lg block" id="calendar">
+        <div class="accordion-header d-flex align-items-center">
+          <h5>INFO</h5>
+          <i class="fas fa-ellipsis-h float-right" data-bs-toggle="collapse" data-bs-target="#collapseCalendar"></i>
+        </div>
+        <div id="collapseCalendar" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#calendar">
+          <div class="accordion-body">
+            <div class="info-top">
+              <h3 id="name"></h3>
+              <h5>Plan: <span id="plan"></span></h5>
+            </div>
+              <div class="card-footer">
+                <div class="row text-center">
+                  <div class="col border-right">
+                      <h5 id="notesCount"></h5>
+                      <span>NOTES</span>
+                  </div>
+                  <div class="col border-right">
+                      <h5 id="todoCount"></h5>
+                      <span>TODO</span>
+                  </div>
+                  <div class="col">
+                      <h5 id="daysCount"></h5>
+                      <span>DAYS</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </section>
+  </div>
+    </main>
+    <footer>
+        <p>&copy;2021 wondernote.fun</p>
+        <div style="margin-top:-1px;font-size:8pt;background-color: rgb(8, 16, 24); width:100%;padding-bottom:10px">
+          <span>Created by</span> <a style="color:gray" href="https://www.github.com/thevitik/" target="_blank">TheVitik</a>
+        </div>
+    </footer>
+    <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript" src="js/dataprocessor.js"></script>
+    <script src="vendor/calendar/calendar.min.js"></script>
+    <script src="vendor/owncarousel/owl.carousel.js"></script>
+    <script>
+      function selectDate(date) {
+  $('#calendar-wrapper').updateCalendarOptions({
+    date: date
+  });
+}
+var defaultConfig = {
+  weekDayLength: 1,
+  date: null,
+  onClickDate: selectDate,
+  startOnMonday: true,
+};
+var calendar = $('#calendar-wrapper').calendar(defaultConfig);
+
+</script>
+</body>
+</html>
